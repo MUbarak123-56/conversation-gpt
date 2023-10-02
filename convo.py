@@ -81,7 +81,7 @@ def message_output(message):
 
 message_output(st.session_state.messages[1])
 
-if prompt := st.chat_input():
+if prompt := st.chat_input(disabled=not openai_api_key)):
     new_message = {"role": "user", "content": prompt}
     st.session_state.messages.append(new_message)
 
